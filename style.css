@@ -1,0 +1,410 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+}
+
+header {
+  background: linear-gradient(90deg, #00bcd4, #2196f3);
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.tips-section {
+  padding: 2rem;
+}
+
+.tips-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.tip {
+  background-color: #e3f2fd;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tip-title {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tip-content {
+  max-height: 0; /* Hide content by default */
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.4s ease-out;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+}
+
+/* Hover effect for the tips */
+.tip:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow to make it pop */
+  transform: scale(1.02); /* Slightly enlarge the tip */
+}
+
+/* Smooth transition for the tip content when expanded */
+.tip-content {
+  transition: max-height 0.4s ease-in-out;
+}
+/* General Body and Layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+}
+
+/* Light Mode */
+body.light {
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Header Section */
+header {
+  background: linear-gradient(90deg, #00bcd4, #2196f3);
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Theme Toggle Button */
+#themeToggle {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#themeToggle:hover {
+  background-color: #1976d2;
+}
+
+/* Search Bar */
+#searchInput {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Filter Checkbox Layout */
+#searchInput,
+label {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+label input {
+  margin-right: 5px;
+}
+
+/* Tips Section */
+.tips-section {
+  padding: 2rem;
+}
+
+.tips-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.tip {
+  background-color: #e3f2fd;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tip-title {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tip-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.4s ease-out;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+}
+
+/* Hover effect for the tips */
+.tip:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/* Smooth transition for the tip content */
+.tip-content {
+  transition: max-height 0.4s ease-in-out;
+}
+
+/* Tooltips */
+[title] {
+  position: relative;
+}
+
+[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+[title]:hover::after {
+  opacity: 1;
+}
+
+/* Section Filter Styling */
+input[type="checkbox"].sectionFilter {
+  margin-right: 5px;
+  cursor: pointer;
+}
+body.dark-theme {
+  background-color: #333;
+  color: white;
+}
+
+body.dark-theme header {
+  background: linear-gradient(90deg, #00bcd4, #2196f3);
+}
+/* Sticky Header */
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  padding: 1rem;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+}
+header.scrolled {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Tip Expand Animation */
+.tip-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+  padding: 0 1rem;
+}
+.tip-content.expanded {
+  max-height: 300px;
+  padding: 1rem;
+}
+
+/* Highlight Match */
+mark {
+  background-color: #ff0;
+  color: #000;
+  padding: 0 2px;
+}
+
+/* Tip Title Cursor & Focus Style */
+.tip-title {
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+}
+.tip-title:focus {
+  box-shadow: 0 0 0 2px #2196f3;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #121212;
+  color: #eee;
+}
+.dark-theme header {
+  background-color: #1e1e1e;
+}
+.dark-theme mark {
+  background-color: #ffb800;
+  color: black;
+}
+.blue-box {
+  background-color: #e3f2fd; /* Light blue */
+  border-left: 6px solid #2196f3;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+  transition: background-color 0.3s;
+}
+
+.dark-theme .blue-box {
+  background-color: #1a2e40;
+  border-left-color: #64b5f6;
+}
+.blue-box:hover {
+  background-color: #d0e7fa;
+}
+.dark-theme .blue-box:hover {
+  background-color: #24394d;
+}
+.tips-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #e3f2fd; /* Light blue background for section */
+  border-radius: 12px;
+  margin: 1rem auto;
+  max-width: 95%;
+  justify-content: center;
+}
+
+.tip {
+  flex: 1 1 300px; /* Adjust the width; 300px minimum, responsive */
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.tip-title {
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tip-content {
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.tip.active .tip-content {
+  display: block;
+}
+.tip-content {
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.tip.active .tip-content {
+  display: block;
+}
+.tips-section {
+  padding: 2rem;
+  background-color: #e3f2fd; /* Light blue */
+  margin: 1rem auto;
+  border-radius: 12px;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tip {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.tip:hover {
+  transform: scale(1.01);
+}
+
+.tip-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #0d47a1;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #90caf9;
+  padding-bottom: 0.3rem;
+}
+
+.tip-content {
+  display: none;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.tip.active .tip-content {
+  display: block;
+}
